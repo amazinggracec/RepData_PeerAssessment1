@@ -370,32 +370,16 @@ summary {
 <h1>Reproducible Research: Peer Assessment 1</h1>
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
-<pre class="r"><code>library(lubridate)</code></pre>
-<pre><code>## 
-## Attaching package: 'lubridate'</code></pre>
-<pre><code>## The following object is masked from 'package:base':
-## 
-##     date</code></pre>
-<pre class="r"><code>unzip(&quot;activity.zip&quot;)
+<pre class="r"><code>library(lubridate)
+unzip(&quot;activity.zip&quot;)
 
 data &lt;- read.csv(&quot;activity.csv&quot;, header=TRUE, na.strings=&quot;NA&quot;)
 data$date&lt;-ymd(data$date)</code></pre>
 </div>
 <div id="what-is-mean-total-number-of-steps-taken-per-day" class="section level2">
 <h2>What is mean total number of steps taken per day?</h2>
-<pre class="r"><code>library(dplyr)</code></pre>
-<pre><code>## 
-## Attaching package: 'dplyr'</code></pre>
-<pre><code>## The following objects are masked from 'package:lubridate':
-## 
-##     intersect, setdiff, union</code></pre>
-<pre><code>## The following objects are masked from 'package:stats':
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library(ggplot2)
+<pre class="r"><code>library(dplyr)
+library(ggplot2)
 
 data&lt;-group_by(data, date)
 total_steps &lt;- summarize(data, total = sum(steps, na.rm=TRUE))

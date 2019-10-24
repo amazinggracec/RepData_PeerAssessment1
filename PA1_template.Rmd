@@ -6,7 +6,7 @@ output:
 # Reproducible Research: Peer Assessment 1
 
 ## Loading and preprocessing the data
-```{r echo = TRUE}
+```{r echo = TRUE, message=FALSE, warning=FALSE}
 library(lubridate)
 unzip("activity.zip")
 
@@ -18,7 +18,7 @@ data$date<-ymd(data$date)
 
 
 ## What is mean total number of steps taken per day?
-```{r echo = TRUE}
+```{r echo = TRUE, message=FALSE, warning=FALSE}
 library(dplyr)
 library(ggplot2)
 
